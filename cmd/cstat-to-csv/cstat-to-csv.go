@@ -118,7 +118,7 @@ func renderResults(w io.Writer, rs []*Result) error {
 
 	records := [][]string{}
 	for _, r := range rs {
-		record := []string{r.mtime.String(), *headingFlag, r.average, r.duration.String(), *headingFlag}
+		record := []string{r.mtime.String(), r.src, r.average, r.duration.String(), r.src}
 		record = append(record, r.values...)
 		records = append(records, record)
 	}
